@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Trading Platform Welcome page</title>
+<link rel="stylesheet" href="styles/welcome_styles.css" type="text/css" />
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--
+acceler, a free CSS web template by ZyPOP (zypopwebtemplates.com/)
+
+Download: http://zypopwebtemplates.com/
+
+License: Creative Commons Attribution
+//-->
+
+<script>
+function validateForm() {
+    var a = document.forms["loginPage"]["username"].value;
+	var message =[];
+    if (a==null || a=="") {
+        message.push("username must be filled out");
+		}
+	var b = document.forms["loginPage"]["password"].value;
+    if (b==null || b=="") {
+        message.push("password must be filled out");
+		}
+    
+	if (message.length > 0) {
+        alert(message.join('\n'));
+        return false;
+    } else {
+        return true;
+    }
+}
+
+	
+</script>
+
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+</head>
+<body>
+<div id="container">
+
+    <header>
+	<div class="width">
+    		<h1><a href="/">Trading Platform</a></h1>
+    </header>
+    <div id="body" class="width">
+
+		<section id="content" class="two-column with-right-sidebar">	
+        </section>
+        
+        <aside class="sidebar big-sidebar right-sidebar">
+	
+	
+            <ul>	
+               <div class="login">
+				  <h3>Login to TradingPlatform</h3>
+				  <form name="loginPage" method="post" action="Auth" onsubmit="return validateForm();">
+					<input type="text" name="username" placeholder="Username or Email"><br>
+					<input type="password" name="password"  placeholder="Password"><br>
+					<p class="remember_me">
+					  <label>
+						<input type="checkbox" name="remember_me" id="remember_me">
+						Remember me on this computer
+					  </label>
+					</p>
+					<p class="submit"><input type="submit" name="commit" value="Login"></p>
+					
+				  </form>
+				</div>
+
+				<div class="login-help">
+				  <p>Forgot your password? <a href="forgotPassword.html">Click here to reset it</a>.</p>
+				  <h5><a href="application_page.html">Newuser?</a></h5>
+				</div>
+                <!--source code: http://www.cssflow.com/snippets/login-form/demo/html-->
+
+            </ul>
+		
+        </aside>
+    	
+    </div>
+    
+</div>
+</body>
+</html>
